@@ -16,6 +16,17 @@
     <%= form.text_field :name %>
   </div>
 
+    <div class="field">
+    <%= form.label :strains %>
+    <%= form.collection_check_boxes(:strain_ids, Strain.all, :id, :name) do |strain| %>
+      <% strain.label  class: "label-checkbox" do %>
+      <%= strain.check_box + strain.text%>
+      <%= form.label :percentage %>
+      <%= text_field("wine[percentage]", strain.value) %>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="field">
     <%= form.label :score %>
     <%= form.number_field :score %>
