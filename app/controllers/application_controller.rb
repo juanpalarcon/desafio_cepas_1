@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
     def authorize_admin!
         unless current_user.admin?
-            flash[:error] = 'debes ser peter'
+            flash[:error] = 'solo admin pueden editar'
             redirect_to new_user_session_url
 
         end
