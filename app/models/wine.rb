@@ -27,14 +27,10 @@ class Wine < ApplicationRecord
         newe.join(', ')
     end 
 
-    # def addOenologist(oenologists)
-    #     oenologists.each do |oe|
-    #         oenologist = self.oenologists.new(id: oe)
-    #         temp_strain.save
-           
-    #     end 
-    # end
-    
+def get_oenologist
+    oenologists.map {|oeonologists| oenologist.name}.join(',  ')
+
+end
 
 
 
