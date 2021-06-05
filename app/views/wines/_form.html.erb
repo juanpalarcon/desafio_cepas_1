@@ -18,7 +18,7 @@
 
     <div class="field">
     <%= form.label :strains %>
-    <%= form.collection_check_boxes(:strain_ids, Strain.all, :id, :name) do |strain| %>
+    <%= form.collection_check_boxes(:strain_ids, Strain.where(available:true), :id, :name) do |strain| %>
       <% strain.label  class: "label-checkbox" do %>
       <%= strain.check_box + strain.text%>
       <%= form.label :percentage %>
@@ -32,10 +32,7 @@
     <%= form.number_field :score %>
   </div>
 
-  <div class="field">
-    <%= form.label :available %>
-    <%= form.check_box :available %>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>
