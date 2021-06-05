@@ -3,7 +3,7 @@ class StrainsController < ApplicationController
 
   # GET /strains or /strains.json
   def index
-    @strains = Strain.all
+    @strains = Strain.order("name")
   end
 
   # GET /strains/1 or /strains/1.json
