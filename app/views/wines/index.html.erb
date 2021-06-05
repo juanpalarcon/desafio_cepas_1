@@ -17,7 +17,7 @@
     <% @wines.each do |wine| %>
       <tr>
         <td><%= wine.name %></td>
-        <td><%= wine.oenologists%></td>
+        <td><%= wine.get_oenologist%></td>
         <td><%= wine.score %></td>
         <td><%= wine.strainnames_and_percentages %></td>
         <td><%= link_to 'Show', wine %></td>

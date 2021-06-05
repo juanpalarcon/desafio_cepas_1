@@ -28,7 +28,8 @@ class Wine < ApplicationRecord
     end 
 
 def get_oenologist
-    oenologists.map {|oeonologists| oenologist.name}.join(',  ')
+    oenologists.map  {|oeonologists| oenologists.name}.join(',  ')
+
 
 end
 
