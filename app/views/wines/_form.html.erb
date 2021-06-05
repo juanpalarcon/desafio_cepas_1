@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= form.label :oenologists %>
-    <%= form.collection_check_boxes(:oenologists, Oenologist.all, :id, :name) do |oe| %>
+    <%= form.collection_check_boxes(:oenologist_ids, Oenologist.all, :id, :name) do |oe| %>
       <% oe.label  class: "label-checkbox" do %>
       <%= oe.check_box + oe.text%>
       <% end %>

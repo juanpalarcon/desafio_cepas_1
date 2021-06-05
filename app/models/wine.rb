@@ -27,13 +27,13 @@ class Wine < ApplicationRecord
         newe.join(', ')
     end 
 
-    def addOenologist(oenologists)
-        oenologists.each do |oe|
-            oenologist = self.oenologists.new(id: oe)
-            temp_strain.save
+    # def addOenologist(oenologists)
+    #     oenologists.each do |oe|
+    #         oenologist = self.oenologists.new(id: oe)
+    #         temp_strain.save
            
-        end 
-    end
+    #     end 
+    # end
     
 
 
