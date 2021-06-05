@@ -14,6 +14,7 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @oenologist = Wine.order(:age)
   end
 
   # GET /wines/1/edit
@@ -66,6 +67,6 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, :score, {strain_ids: [] }, :percentage )
+      params.require(:wine).permit(:name, :score, {strain_ids: [] }, :percentage, {oenologist_ids: []})
     end
 end
