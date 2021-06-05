@@ -28,6 +28,7 @@ class WinesController < ApplicationController
     respond_to do |format|
       if @wine.save
         @wine.addStrainPercent(params[:wine][:percentage])
+        @wine.oenologists.create(id:params[:wine][:oenologists])
         format.html { redirect_to @wine, notice: "Wine was successfully created." }
         format.json { render :show, status: :created, location: @wine }
       else

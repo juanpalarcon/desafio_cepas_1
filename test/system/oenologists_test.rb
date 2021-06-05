@@ -15,7 +15,7 @@ class OenologistsTest < ApplicationSystemTestCase
     click_on "New Oenologist"
 
     fill_in "Age", with: @oenologist.age
-    fill_in "Nacionality", with: @oenologist.nacionality
+    fill_in "nationality", with: @oenologist.nationality
     fill_in "Name", with: @oenologist.name
     click_on "Create Oenologist"
 
@@ -28,7 +28,7 @@ class OenologistsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Age", with: @oenologist.age
-    fill_in "Nacionality", with: @oenologist.nacionality
+    fill_in "nationality", with: @oenologist.nationality
     fill_in "Name", with: @oenologist.name
     click_on "Update Oenologist"
 
