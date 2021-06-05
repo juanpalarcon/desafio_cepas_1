@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>strain</th>
       <th>Score</th>
       <th colspan="3"></th>
     </tr>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= wine.name %></td>
         <td><%= wine.score %></td>
+        <td><%= wine.strains.map(&:name).sort.join(', ') %></td>
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
         <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
