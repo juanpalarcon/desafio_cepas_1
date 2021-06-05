@@ -12,10 +12,20 @@ class Wine < ApplicationRecord
             end
         end 
     end
+
     def strainnames_and_percentages
+        list = []
+        newe = []
         wine_strains.map do |ws|
-            "#{ws.strain.name} (#{ws.percentage}%)"
-        end.join (', ')
+            list << [ws.strain.name, ws.percentage ]
+            # "#{ws.strain.name} (#{ws.percentage}%)"
+        end
+        list.sort_by{ |strain| strain[0] }.each do |wso|
+            newe << "#{wso[0]}  (#{wso[1]}%)"
+        end
+        newe.join(', ')
     end 
+
+
 
 end
