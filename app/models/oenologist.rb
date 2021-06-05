@@ -1,3 +1,4 @@
 class Oenologist < ApplicationRecord
-    has_and_belongs_to_many :wines
+    has_many :wine_oenologists, dependent: :destroy
+    has_many :wines, through: :wine_strains, dependent: :destroy
 end
