@@ -10,10 +10,12 @@ class Wine < ApplicationRecord
                 temp_strain.percentage = percentage
                 temp_strain.save
             end
- 
-        
         end 
     end
-
+    def strainnames_and_percentages
+        wine_strains.map do |ws|
+            "#{ws.strain.name} (#{ws.percentage}%)"
+        end.join (', ')
+    end 
 
 end
