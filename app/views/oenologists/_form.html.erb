@@ -26,6 +26,17 @@
     <%= form.text_field :nationality %>
   </div>
 
+    <div class="field">
+    <%= form.label :magazines %>
+    <%= form.collection_check_boxes(:magazines, Magazine.all, :id, :name) do |mg| %>
+      <% mg.label  class: "label-checkbox" do %>
+      <%= mg.check_box + mg.text%>
+
+      <% end %>
+    <% end %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
