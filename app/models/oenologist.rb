@@ -27,12 +27,9 @@ class Oenologist < ApplicationRecord
     end 
     
     def magazine_name
-
-        magazine_oenologists.map do |mo|
-            mo.magazine.name
-            # "#{ws.strain.name} (#{ws.percentage}%)"
-        
-        end.join(', ') 
-    end 
+        magazines.map do |magazine_info|
+            magazine_info.name
+        end.join(', ')
+    end
 
 end
