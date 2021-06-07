@@ -26,18 +26,26 @@
     <%= form.text_field :nationality %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= form.label :magazines %>
-    <%= form.collection_check_boxes(:magazines, Magazine.all, :id, :name) do |mg| %>
+    <%= form.collection_check_boxes(:magazine_ids, Magazine.all, :id, :name) do |mg| %>
       <% mg.label  class: "label-checkbox" do %>
       <%= mg.check_box + mg.text%>
-
       <% end %>
     <% end %>
   </div>
 
+  <div class="field">
+    <%= form.label :jobtitles %>
+    <%= form.collection_check_boxes(:jobtitle_ids, Jobtitle.all, :id, :name) do |j| %>
+      <% j.label  class: "label-checkbox" do %>
+          <%= j.check_box + j.text%>
+      <% end %>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
